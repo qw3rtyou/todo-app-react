@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  todo-app:
+    container_name: todo-app-5555
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '5555:5555'
+    environment:
+      - NODE_ENV=development
